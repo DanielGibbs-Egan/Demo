@@ -3,25 +3,33 @@ public class TreeList {
 
 	private class SubTree {
 		
-		private SubTree off;
-		private SubTree on;
-		
-		private SubTree next;
-		private SubTree previous;
+		private SubTree left;
+		private SubTree right;
+
+		private int index;
+		public SubTree next;
 		
 		private int data;
+
+//		private SubTree next;
+//		private SubTree previous;
+//		public SubTree getLinear(boolean next) {
+//			if (next)
+//				return this.next;
+//			return this.previous; 
+//		}
 		
-		public SubTree getSub(boolean on) {
-			if (on) {
-				if (this.on == null) {
-					this.on = new SubTree();
+		public SubTree getSub(boolean right) {
+			if (right) {
+				if (this.right == null) {
+					this.right = new SubTree();
 				}
-				return this.on;
+				return this.right;
 				
 			};
-			if (this.off == null)
-				this.off = new SubTree();
-			return this.off;
+			if (this.left == null)
+				this.left = new SubTree();
+			return this.left;
 		}
 		
 		public SubTree() {}
@@ -29,11 +37,12 @@ public class TreeList {
 	}
 	
 	SubTree root;
+	SubTree lastLeaf;
 	
 	int size;
 	
 	public TreeList() { 
-		this.root = new SubTree();
+		this.root = this.lastLeaf = new SubTree();
 		this.size = 0;
 	}
 	
@@ -46,11 +55,12 @@ public class TreeList {
 			index /= 2;
 		}
 		
-		if (index % 2 == 0) {
-			subTree.data = n;
-		} else {
-			subTree.getSub(true).data = n;
+		if (index % 2 == 1) {
+			subTree = subTree.getSub(true);
 		}
+		
+		subTree.data = n;
+		
 		size++;
 		
 	}
@@ -67,11 +77,11 @@ public class TreeList {
 			index /= 2;
 		}
 		
-		if (index % 2 == 0) {
-			return subTree.data;
-		} else {
-			return subTree.getSub(true).data;
+		if (index % 2 == 1) {
+			subTree = subTree.getSub(true);
 		}
+		
+		return subTree.data;
 		
 	}
 	
@@ -81,14 +91,12 @@ public class TreeList {
 	
 	public static void main(String[] args) {
 		TreeList t = new TreeList();
-		t.add(1);
-		t.add(2);
-		t.add(3);
-		t.add(4);
-		System.out.println(t.get(0));
-		System.out.println(t.get(1));
-		System.out.println(t.get(2));
-		System.out.println(t.get(3));
+		for (int i = 0; i < 100; i++) {
+			t.add(i+1);
+		}
+		for (int i = 0; i < t.size; i++) {
+			System.out.println(t.get(i));
+		}
 	}
 	
 }
