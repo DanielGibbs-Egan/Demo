@@ -10,10 +10,14 @@ import java.util.Set;
  * 		margin-left: 25px;
  *  }
 	em {
-		box-shadow: -4px 0 0 #202020, 4px 0 0 #202020;
-		//border: 1px solid #202020;
-		background-color: #202020;
+		margin-left: 50px;
+		border: 2px solid rgba(150, 150, 150, 0);
+		background-opacity: .5;
+		background-color: rgba(255, 255, 255, .75);
  * 		line-height: 2;
+	}
+	sp {
+		margin-left: 4px;
 	}
 	</style>
  * 
@@ -25,34 +29,40 @@ import java.util.Set;
  * 		__-[ INDEX ]-__<br>
  * </center>
  *<body>
- <b>variables:</b><br>
+ <b>variables:</b><br> <br>
  *	
- *	<tab><b>int</b> years : <em> amount of years covered by the data </em><br>
+ *	<tab><b>int</b> years :<br> <em><sp>amount of years covered by the data </em><br>
  *	<br>
- *	<tab><b>Set</b> highTemperatures : <em> set of all recored high temperatures </em><br>
- *	<tab><b>Set</b> lowTemperatures : <em> set of all recored low temperatures </em><br>
+ *	<tab><b>Set</b> highTemperatures :<br> <em><sp> of all recored high temperatures </em><br>
+ *	<tab><b>Set</b> lowTemperatures :<br> <em><sp>set of all recored low temperatures </em><br>
  *	<br>
- *	<tab><b>Map</b> weatherData : <em> weather data indexed by date </em><br>
+ *	<tab><b>Map</b> weatherData :<br> <em><sp>weather data indexed by date </em><br>
  *	<br>
- *	<tab><b>Map</b> highestHighForLow : <em> the highest temperatures indexed by corresponding low temperature </em><br>
- *	<tab><b>Map</b> lowestMostCommonHighByMonth : <em> the most common high indexed by month, prefers lower temperatures in the event of a tie </em><br>
+ *	<tab><b>Map</b> highestHighForLow :<br> <em><sp>the highest temperatures indexed by corresponding low temperature </em><br>
+ *	<tab><b>Map</b> lowestMostCommonHighByMonth :<br> <em><sp>the most common high indexed by month, prefers lower temperatures in the event of a tie </em><br>
  *	<br>
- *	<tab><b>Map</b> snowfallByYear : <em> amount of snowfall indexed by year </em><br>
- *	<tab><b>Map</b> precipitationByMonth : <em> amount of rainfall indexed by month </em><br>
+ *	<tab><b>Map</b> snowfallByYear :<br> <em><sp>amount of snowfall indexed by year </em><br>
+ *	<tab><b>Map</b> precipitationByMonth :<br> <em><sp>amount of rainfall indexed by month </em><br>
  *	<br>
- *	<tab><b>Map</b> frequencyOfHighsByMonth : <em> high temperatures and their frequency indexed by month </em><br>
+ *	<tab><b>Map</b> frequencyOfHighsByMonth :<br> <em><sp>high temperatures and their frequency indexed by month </em><br><br>
  *	
  *
- <b>methods</b> : <br>
+ <b>methods</b> : <br> <br>
  
  *	<tab><b>double</b> doubleFromObject(Object value) : <br>
- *	<em> returns a <b>double</b> representation of the <b>Object</b> value </em><br>
+ *	<em><sp>returns a <b>double</b> representation of the given <b>Object</b> value </em><br>
  *	<tab><b>boolean</b> highTemp(int degrees) : <br>
+ *	<em><sp>returns a <b>boolean</b> representing if the given <b>int</b> temperature was a recorded high </em><br>
  *	<tab><b>boolean</b> lowTemp(int degrees) : <br>
+ *	<em><sp>returns a <b>boolean</b> representing if the given <b>int</b> temperature was a recorded low </em><br>
  *	<tab><b>double</b> totalSnowfallForYear(int year) : <br>
+ *	<em><sp>returns a <b>double</b> value for the total snowfall in a given <b>int</b> year </em><br>
  *	<tab><b>double</b> averagePrecipitationForMonth(int month) : <br>
+ *	<em><sp>returns a <b>double</b> value for the average precipitation in a given <b>int</b> month </em><br>
  *	<tab><b>int</b> lowestMostCommonHighForMonth(int month) : <br>
+ *	<em><sp>returns an <b>int</b> value for the most common high temperature in a given <b>int</b> month </em><br>
  *	<tab><b>int</b> highestHighForLow(int degrees) : <br>
+ *	<em><sp>returns an <b>int</b> value for the highest temperature seen alongside the given <b>int</b> low temperature </em><br>
  *</body>
  */
 
